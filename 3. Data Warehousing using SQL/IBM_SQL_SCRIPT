@@ -1,0 +1,36 @@
+CREATE TABLE DimCategory (
+  categoryid int NOT NULL PRIMARY KEY,
+  category varchar(20) NOT NULL
+);
+
+CREATE TABLE DimCountry (
+  countryid int NOT NULL PRIMARY KEY,
+  country varchar(20) NOT NULL
+);
+
+CREATE TABLE DimDate (
+  dateid int NOT NULL PRIMARY KEY,
+  date timestamp NOT NULL,
+  Year varchar(20) NOT NULL,
+  Quarter int NOT NULL,
+  QuarterName varchar(20) NOT NULL,
+  Month int NOT NULL,
+  MonthName varchar(20) NOT NULL,
+  Day int NOT NULL,
+  Weekday int NOT NULL,
+  WeekdayName varchar(20) NOT NULL
+);
+
+CREATE TABLE FactSales (
+  orderid int NOT NULL PRIMARY KEY,
+  dateid int NOT NULL,
+  countryid int NOT NULL,
+  categoryid int NOT NULL,
+  amount int NOT NULL
+);
+
+ALTER TABLE FactSales
+  ADD CONSTRAINT FactSales_ibfk_1 FOREIGN KEY (dateid) REFERENCES DimDate (dateid)
+  ADD CONSTRAINT FactSales_ibfk_2 FOREIGN KEY (countryid) REFERENCES DimCountry (countryid)
+  ADD CONSTRAINT FactSales_ibfk_3 FOREIGN KEY (categoryid) REFERENCES DimCategory (categoryid);
+COMMIT;
