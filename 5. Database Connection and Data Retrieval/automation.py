@@ -3,7 +3,7 @@ import mysql.connector
 # Import libraries required for connecting to DB2
 import ibm_db
 # Connect to MySQL
-connection = mysql.connector.connect(user='root', password='MTU2NC1kYW5pZWxk',host='127.0.0.1', port='3306',database='sales', auth_plugin='mysql_native_password')
+connection = mysql.connector.connect(user='root', password='xxxxxxxxxxxxxxxx',host='127.0.0.1', port='3306',database='sales', auth_plugin='mysql_native_password')
 cursor = connection.cursor()
 SQL = """CREATE TABLE IF NOT EXISTS products(
 
@@ -17,7 +17,7 @@ cursor.execute(SQL)
 # Connect to DB2
 dsn_hostname = "21fecfd8-47b7-4937-840d-d791d0218660.bs2io90l08kqb1od8lcg.databases.appdomain.cloud" # e.g.: "dashdb-txn-sbox-yp-dal09-04.services.dal.bluemix.net"
 dsn_uid = "stk11143"        # e.g. "abc12345"
-dsn_pwd = "izeIFJ7i5F7aPH57"      # e.g. "7dBZ3wWt9XN6$o0J"
+dsn_pwd = "xxxxxxxxxxxxxxxx"      # e.g. "7dBZ3wWt9XN6$o0J"
 dsn_port = "31864"                # e.g. "50000" 
 dsn_database = "bludb"            # i.e. "BLUDB"
 dsn_driver = "{IBM DB2 ODBC DRIVER}" # i.e. "{IBM DB2 ODBC DRIVER}"           
